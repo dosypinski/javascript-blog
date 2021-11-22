@@ -131,4 +131,38 @@
     }
   };
   generateAuthors();
+
+  const authorClickHandler = function(event){
+
+    event.preventDefault();
+
+    const clickedElement = this;
+    const href = clickedElement.getAttribute('href');
+    const author = href.replace('#author-', '');
+    const authorLinks = document.querySelectorAll('a[href^="#author-"]');
+
+    for (let authorLink of authorLinks){
+
+      authorLink.classList.remove('active');
+    }
+
+    const authorEqualLinks = document.querySelectorAll('a[href="' + href + '"]');
+
+    for (let authorEqualLink of authorEqualLinks){
+      authorEqualLink.classList.add('active');
+    }
+
+    generateTitleLinks('[data-author="' + author + '"]');
+  };
+
+  const addClickListenersToAuthors = function(){
+
+    const authors = document.querySelectorAll('a[href^="#author-"]');
+
+    for (let author of authors){
+      author.addEventListener('click', authorClickHandler);
+    }
+  };
+
+  addClickListenersToAuthors();
 }

@@ -122,3 +122,39 @@ body {
     margin: 0 10px 0 0;
   }
 }
+
+.sidebar .tags , .authors li {
+  & a {
+    text-decoration: none;
+  }
+  display: inline;
+}
+
+.tag-size-1 {
+  font-size: smaller;
+  color: purple;
+}
+
+.tag-size-2 {
+  font-size: medium;
+  color: blue;
+}
+
+.tag-size-3 {
+  font-size: large;
+  color: green;
+}
+
+.tag-size-4 {
+  font-size: larger;
+  color: rgb(175, 175, 29);
+}
+
+.tag-size-5 {
+  font-size: x-large;
+  color: orange;
+}
+.tag-size-6 {
+  font-size: xx-large;
+  color: red;
+}
